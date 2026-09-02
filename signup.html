@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dear Diary</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="frame"></div>
+
+    <h1 class="title">Dear Diary</h1>
+
+    <div class="card">
+        
+        <p class="card-title">Sign Up</p>
+
+        <form method="POST">
+            <p class="label">Enter a Username</p>
+            <input type="text" name="username" class="username-box">
+            <br>
+            <p class="label">Enter  a Password</p>
+            <input type="password" name="password" class="password-box">
+            <br>
+            <p class="label">Confirm Password</p>
+            <input type="password" name="confirm_password" class="password-box">
+            <button type="submit" class="sign-up-btn">Sign Up</button>
+            <br>
+            <p class="label">Already have an account? <a href="/">Log in</a></p>
+        </form>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>
